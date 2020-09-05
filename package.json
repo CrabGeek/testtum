@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "start": "vue-cli-service serve"
+    "start": "vue-cli-service serve",
+    "postinstall": "NODE_ENV=development && npm run client-install && npm run client-build && NODE_ENV=production"
   },
   "dependencies": {
     "core-js": "^3.6.5",
