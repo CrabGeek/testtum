@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "start": "vue-cli-service serve",
-    "postinstall": "NODE_ENV=development && npm run client-install && npm run client-build && NODE_ENV=production"
+    "serve": "./node_modules/.bin/vue-cli-service serve",
+    "build": "./node_modules/.bin/vue-cli-service build",
+    "start": "./node_modules/.bin/vue-cli-service serve"
   },
   "dependencies": {
     "core-js": "^3.6.5",
