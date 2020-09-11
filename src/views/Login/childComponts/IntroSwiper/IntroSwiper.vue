@@ -1,10 +1,10 @@
 <template>
   <div>
-    <swiper :interval="30000000">
+    <swiper :interval="30000">
       <swiper-item v-for="(item, index) in imgList" :key="index">
         <div class="content">
           {{item.content}}
-          <img :src="item.url" :alt="index"  class="swiper-img"/>
+          <img :src="item.url" :alt="index" class="swiper-img" />
         </div>
       </swiper-item>
     </swiper>
@@ -24,9 +24,21 @@ export default {
   data() {
     return {
       imgList: [
-        {pic: 0, url: require("../../../../assets/img/intro/Letter_&_Flowers.png"), content: introText.pic1},
-        {pic: 1, url: require("../../../../assets/img/intro/EmotionBottle.png"), content: introText.pic2},
-        {pic: 2, url: require("../../../../assets/img/intro/PrettyMushroom.png"), content: introText.pic3},
+        {
+          pic: 0,
+          url: require("../../../../assets/img/intro/Letter_&_Flowers.png"),
+          content: introText.pic1,
+        },
+        {
+          pic: 1,
+          url: require("../../../../assets/img/intro/EmotionBottle.png"),
+          content: introText.pic2,
+        },
+        {
+          pic: 2,
+          url: require("../../../../assets/img/intro/PrettyMushroom.png"),
+          content: introText.pic3,
+        },
       ],
     };
   },
@@ -34,17 +46,17 @@ export default {
 </script>
 
 <style scoped>
-  .swiper-img {
-    width: 60px;
-    height: 250px;
-  }
-  .content {
-    font-family: Bakso Sapi;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 38px;
-    text-align: center;
-    text-transform: uppercase;
-  }
+.swiper-img {
+  width: 60px;
+  height: 250px;
+}
+.content {
+  font-family: Bakso Sapi;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  text-transform: uppercase;
+}
 </style>
