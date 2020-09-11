@@ -1,25 +1,33 @@
 <template>
   <div>
-    <swiper :interval="30000">
-      <swiper-item v-for="(item, index) in imgList" :key="index">
+    <swiper class="swiper" :options="swiperOption">
+      <swiper-slide
+        v-for="(item, index) in imgList"
+        :key="index"
+        class="swiper-slide"
+      >
         <div class="content">
-          {{item.content}}
+          <div class="content-text">{{ item.content }}</div>
           <img :src="item.url" :alt="index" class="swiper-img" />
         </div>
-      </swiper-item>
+      </swiper-slide>
     </swiper>
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperItem } from "@/components/common/swiper/index";
+// import { Swiper, SwiperItem } from "@/components/common/swiper/index";
 import { introText } from "../../../../assets/text/test.js";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/swiper-bundle.css";
 
 export default {
   name: "IntroSwiper",
   components: {
+    // Swiper,
+    // SwiperItem,
     Swiper,
-    SwiperItem,
+    SwiperSlide,
   },
   data() {
     return {
@@ -40,23 +48,45 @@ export default {
           content: introText.pic3,
         },
       ],
+      swiperOption: {
+        slidesPerView: 1,
+        freeMode: false,
+        loop: false,
+        speed: 2000,
+      },
     };
   },
 };
 </script>
 
 <style scoped>
-.swiper-img {
-  width: 60px;
-  height: 250px;
+.swiper {
+  height: 400px;
 }
-.content {
-  font-family: Bakso Sapi;
+.swiper-slide {
+  height: 400px;
+  /* width: 300px; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+}
+.swiper-img {
+  width: 250px;
+  height: 350px;
+}
+.content-text {
+  /* position: relative;
+  top: 10%; */
+  font-family: "Bakso Sapi";
   font-style: normal;
   font-weight: normal;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 38px;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
+  margin-top: 80px;
 }
 </style>

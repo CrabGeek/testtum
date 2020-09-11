@@ -1,9 +1,7 @@
 <template>
   <div class="intro">
-    <div class="intro-swiper">
-      <intro-swiper></intro-swiper>
-    </div>
-    <div>
+    <intro-swiper class="intro-swiper"></intro-swiper>
+    <div class="the-input">
       <input
         type="text"
         v-model="user_name"
@@ -40,11 +38,11 @@ export default {
 
 <style scoped>
 .intro-swiper {
-  position: absolute;
-  width: 267px;
-  height: 258px;
-  left: 56px;
-  top: 120px;
+  position: fixed;
+  width: 100%;
+  /* height: 108px; */
+  top: 100px;
+  margin-left: -9px;
 }
 .name-input {
   position: absolute;
