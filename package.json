@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "./node_modules/.bin/vue-cli-service serve",
-    "build": "./node_modules/.bin/vue-cli-service build"
+    "build": "./node_modules/.bin/vue-cli-service build",
+    "start": "node server.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "swiper": "^6.1.2",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
